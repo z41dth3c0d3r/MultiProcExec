@@ -27,7 +27,8 @@ You can create a config file with these commands and use MultiProcExec to launch
 
         git clone https://github.com/z41dth3c0d3r/MultiProcExec
 
-2.  open the .sln file in visual studio
+2.  open the .sln file in visual studio.
+3.  and build the solution.
 
 ## Usage
 
@@ -39,21 +40,21 @@ MultiProcExec supports the following command-line arguments:
 
 ### Using a direct path to config file
 
-/MultiProcExec -p /path/to/your/config.txt
+    MultiProcExec -p /path/to/your/config.txt
 
 ### Using a predefined config
 
-1. Set the `PROC_LAUNCHER_CONFIGS` environment variable:
+1.  Set the `PROC_LAUNCHER_CONFIGS` environment variable:
 
-export PROC_LAUNCHER_CONFIGS=/path/to/your/config/directory
+        export PROC_LAUNCHER_CONFIGS=/path/to/your/config/directory
 
-2. Run the program with the config name:
+2.  Run the program with the config name:
 
-./MultiProcExec -c my_project_config
+        MultiProcExec -c my_project_config
 
 ### Listing commands without execution
 
-./MultiProcExec -p /path/to/your/config.txt -s
+    ./MultiProcExec -p /path/to/your/config.txt -s
 
 ## Configuration File Format
 
@@ -86,7 +87,7 @@ Or, with the `PROC_LAUNCHER_CONFIGS` environment variable set:
 
 ## Requirements
 
-- C++17 or later
+- Make sure you install c++ dev kit on visual studio (Desktop development with c++)
 - Currently Windows Only
 
 ## Contributing

@@ -103,7 +103,7 @@ string getConfigPath()
 		exit(1);
 	}
 	// Get the value of the LIB environment variable.
-	getenv_s(&requiredSize, libvar, requiredSize, "CUDA_PATH");
+	getenv_s(&requiredSize, libvar, requiredSize, "PROC_LAUNCHER_CONFIGS");
 	sLibvar = libvar;
 	free(libvar);
 	return sLibvar;
@@ -120,9 +120,6 @@ int main(int argc, char *argv[]) {
 	if (argc <= 1) {
 		printf("[+] Usage: %s path_to_config_file\n", argv[0]);
 		return 1;
-	}
-	else if (argc == 2) {
-		cout << argv[1];
 	}
 	else {
 		for (int i = 1; i < argc; i++)
@@ -149,7 +146,7 @@ int main(int argc, char *argv[]) {
 		configFileToRead = dynamicConfigPath;
 	}
 	else if (configNameFound) {
-		configFileToRead = getConfigPath() + configName;
+		configFileToRead = getConfigPath() + "\\" + configName;
 	}
 
 	if (isValidFilePath(configFileToRead)) {
@@ -170,6 +167,10 @@ int main(int argc, char *argv[]) {
 			}
 			i++;
 		}
+	}
+	else {
+		cerr << "[!] Not a valid config file!\n";
+		exit(1);
 	}
 
 	return 0;
