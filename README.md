@@ -30,6 +30,10 @@ You can create a config file with these commands and use MultiProcExec to launch
 2.  open the .sln file in visual studio.
 3.  and build the solution.
 
+#### OR
+
+you can download the release and use it.
+
 ## Usage
 
 MultiProcExec supports the following command-line arguments:
